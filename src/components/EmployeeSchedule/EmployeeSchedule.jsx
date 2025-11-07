@@ -34,7 +34,18 @@ const EmployeeSchedule = () => {
 	return <>
 		<div className='row'>
 			<div className='col'>
-				<small className='text-muted'>Ordenar por:</small> <EmployeeScheduleSortSelect />
+				<small className='text-muted'>Ordenar por:</small>
+				{/* <EmployeeScheduleSortSelect /> */}
+				<select className='form-select form-select-sm employee-schedule-sort-select w-auto d-inline-block ms-2'>
+					<option>ID (↑)</option>
+					<option>ID (↓)</option>
+					<option>Nombre (↑)</option>
+					<option>Nombre (↓)</option>
+					<option>Puesto (↑)</option>
+					<option>Puesto (↓)</option>
+					<option>Ubicación (↑)</option>
+					<option>Ubicación (↓)</option>
+				</select>
 			</div>
 			<div className='col d-flex flex-row align-items-center flex-wrap justify-content-end gap-2'>
 				<input type='text' className='form-control w-auto' placeholder='Buscar...' />
