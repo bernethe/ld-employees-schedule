@@ -1,0 +1,23 @@
+.row.filtros {
+	& .col {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+
+		& label {
+			width: 100%;
+			padding-block: 0.5rem;
+		}
+	}
+	@media screen and (max-width: 576px) {
+		& .col {
+			flex-direction: column;
+			gap: 0;
+			& label {
+				padding-block: 0;
+			}
+		}
+	}
+}
