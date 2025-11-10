@@ -107,14 +107,17 @@ select.employee-schedule-sort-select selectedcontent span:nth-child(2) {
 	overflow: hidden;
 	height: 100%;
 	border: 1px solid transparent;
+	border-radius: .25rem;
 	cursor: pointer;
+}
+.employee-schedule-card:hover {
+	border: 1px solid var(--bs-primary);
 }
 .employee-schedule-card input[type='checkbox'] {
 	display: none;
 }
 .employee-schedule-card:has(input[type='checkbox']:checked) {
 	background-color: #DDEEFF;
-	border-radius: .25rem;
 	border: 1px solid var(--bs-primary);
 	overflow: hidden;
 }

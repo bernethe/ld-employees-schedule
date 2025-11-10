@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 // import EmployeeScheduleSortSelect from './EmployeeScheduleSortSelect.jsx'
+import {FaFastBackward, FaFastForward} from 'react-icons/fa'
 import EmployeeScheduleSnippet from './EmployeeScheduleSnippet.jsx'
 import {ZZZIcon} from './EmployeeScheduleIcons.jsx'
 import {capitalizeEachWord, scheduleTracks} from '../../global.jsx';
@@ -8,6 +9,7 @@ import './employee-schedule.css'
 const EmployeeSchedule = ({weekStart, data}) => {
 
 	// console.log(weekStart);
+	const tbodyRef = useRef(null);
 
 	const employeesAll = data.map(employee => ({
 		...employee,
@@ -32,15 +34,9 @@ const EmployeeSchedule = ({weekStart, data}) => {
 	
 	const dates = getNextWeekDates(weekStart);
 
-	const handleSelectAll = () => {
-		// const checkboxes = document.querySelectorAll('.employee-schedule-card input[type="checkbox"]');
-		// checkboxes.forEach(checkbox => checkbox.checked = true);
-	};
+	const handleSelectAll = () => tbodyRef.current.querySelectorAll('.employee-schedule-card input[type="checkbox"]').forEach(checkbox => checkbox.checked = true);
 
-	const handleDeselectAll = () => {
-		// const checkboxes = document.querySelectorAll('.employee-schedule-card input[type="checkbox"]');
-		// checkboxes.forEach(checkbox => checkbox.checked = false);
-	};
+	const handleDeselectAll = () => tbodyRef.current.querySelectorAll('.employee-schedule-card input[type="checkbox"]:checked').forEach(checkbox => checkbox.checked = false);
 
 	return <>
 		<div className='row'>
@@ -80,7 +76,7 @@ const EmployeeSchedule = ({weekStart, data}) => {
 								}
 							</tr>
 						</thead>
-						<tbody>
+						<tbody ref={tbodyRef}>
 							{employees.map((emp) => <tr key={emp.id}>
 								<td>
 									<EmployeeScheduleSnippet employee={emp} />
@@ -100,6 +96,31 @@ const EmployeeSchedule = ({weekStart, data}) => {
 					</table>
 				</div>
 			</div>
+		</div>
+		<div className='row'>
+			<div className='col-sm-3 py-2 text-center text-sm-start'>
+				<span className='text-muted'>Líneas por Página:</span>
+				<label className='mx-2'>
+					<select className='form-select'>
+						<option value='10'>10</option>
+						<option value='25'>25</option>
+						<option value='50'>50</option>
+						<option value='100'>100</option>
+					</select>
+				</label>
+			</div>
+			<div className='col-sm-6 py-2 text-center'>
+				<nav aria-label='Page navigation' className='d-inline-block'>
+					<ul className='pagination'>
+						<li className='page-item disabled'><a className='page-link' href='#'><FaFastBackward /></a></li>
+						<li className='page-item active'><a className='page-link' href='#'>1</a></li>
+						<li className='page-item'><a className='page-link' href='#'>2</a></li>
+						<li className='page-item'><a className='page-link' href='#'>3</a></li>
+						<li className='page-item'><a className='page-link' href='#'><FaFastForward /></a></li>
+					</ul>
+				</nav>
+			</div>
+			<div className='col-sm-3 py-2 text-muted text-center text-sm-end'>Página 1 de 3 (23 registros)</div>
 		</div>
 	</>
 }
