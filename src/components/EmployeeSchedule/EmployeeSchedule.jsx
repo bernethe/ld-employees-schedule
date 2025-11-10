@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import EmployeeScheduleSortSelect from './EmployeeScheduleSortSelect.jsx'
+// import EmployeeScheduleSortSelect from './EmployeeScheduleSortSelect.jsx'
 import EmployeeScheduleSnippet from './EmployeeScheduleSnippet.jsx'
 import {ZZZIcon} from './EmployeeScheduleIcons.jsx'
-import './employee-schedule.css'
-import data from '../../json/employees-cards.json'
 import {capitalizeEachWord, scheduleTracks} from '../../global.jsx';
+import './employee-schedule.css'
 
-const EmployeeSchedule = () => {
+const EmployeeSchedule = ({weekStart, data}) => {
+
+	// console.log(weekStart);
 
 	const employeesAll = data.map(employee => ({
 		...employee,
@@ -19,17 +20,27 @@ const EmployeeSchedule = () => {
 	const [employees, setEmployees] = useState([...employeesAll]);
 
 	const weekDays = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'];
-	// get dates next week begin monday
+
 	const getNextWeekDates = () => {
-		const today = new Date();
-		const nextWeek = new Date(today.setDate(today.getDate() + (7 - today.getDay()) % 7));
+		const today = weekStart ? new Date(weekStart) : new Date();
 		const dates = [];
 		for (let i = 0; i < 7; i++) {
-			dates.push(new Date(nextWeek.setDate(nextWeek.getDate() + 1)));
+			dates.length === 0 ? dates.push(weekStart) : dates.push(new Date(today.setDate(today.getDate() + 1)));
 		}
 		return dates;
 	};
-	const dates = getNextWeekDates();
+	
+	const dates = getNextWeekDates(weekStart);
+
+	const handleSelectAll = () => {
+		// const checkboxes = document.querySelectorAll('.employee-schedule-card input[type="checkbox"]');
+		// checkboxes.forEach(checkbox => checkbox.checked = true);
+	};
+
+	const handleDeselectAll = () => {
+		// const checkboxes = document.querySelectorAll('.employee-schedule-card input[type="checkbox"]');
+		// checkboxes.forEach(checkbox => checkbox.checked = false);
+	};
 
 	return <>
 		<div className='row'>
@@ -57,7 +68,10 @@ const EmployeeSchedule = () => {
 					<table className='table employee-schedule'>
 						<thead>
 							<tr>
-								<th scope='col'></th>
+								<th scope='col'>
+									<button className='btn btn-sm btn-outline-secondary me-2' onClick={ handleSelectAll }>Seleccionar Todos</button>
+									<button className='btn btn-sm btn-outline-secondary' onClick={ handleDeselectAll }>Deseleccionar Todos</button>
+								</th>
 								{
 									weekDays.map((day, i) => <th scope='col' key={i}>
 										<div>{day}</div>

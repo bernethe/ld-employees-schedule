@@ -3,7 +3,8 @@ import {FaRegClock} from 'react-icons/fa'
 import { scheduleTracks } from '../../global.jsx';
 
 const EmployeeScheduleSnippet = ({ employee }) => {
-	return <div className='employee-schedule-card'>
+	return <label className='employee-schedule-card'>
+		<input type='checkbox' value={employee.id} />
 		<div className='employee-schedule-card-image'>
 			<div className='employee-schedule-card-image-flip'>
 				<div className='employee-schedule-card-image-flip-inner'>
@@ -23,13 +24,17 @@ const EmployeeScheduleSnippet = ({ employee }) => {
 			<h5>{employee.name}</h5>
 			<p>{employee.position}</p>
 			<small title={employee.office_slug}>{employee.office_slug}</small>
-			<label className={`employee-schedule-card-body-label employee-schedule-card-body-label-${employee.isAssigned === 1 ? 'assigned' : 'unassigned'}`}><FaRegClock /> <select className='form-select form-select-sm'>
-				{ scheduleTracks.map((track, index) =>
-					<option key={index} value={index+1} selected={employee.schedule === index+1}>{track.label}</option>
-				) }
-			</select></label>
+			<div className={`employee-schedule-card-body-select-cont employee-schedule-card-body-select-cont-${employee.isAssigned === 1 ? 'assigned' : 'unassigned'}`}>
+				<FaRegClock />
+				<select className='form-select form-select-sm' defaultValue={employee.isAssigned === 0 ? -1 : employee.schedule}>
+					<option value={-1}>No asignado</option>
+					{ scheduleTracks.map((track, index) =>
+						<option key={index} value={index}>{track.label}</option>
+					) }
+				</select>
+			</div>
 		</div>
-	</div>
+	</label>
 };
 
 export default EmployeeScheduleSnippet

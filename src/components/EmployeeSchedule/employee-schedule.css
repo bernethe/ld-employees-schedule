@@ -106,6 +106,17 @@ select.employee-schedule-sort-select selectedcontent span:nth-child(2) {
 	align-items: stretch;
 	overflow: hidden;
 	height: 100%;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+.employee-schedule-card input[type='checkbox'] {
+	display: none;
+}
+.employee-schedule-card:has(input[type='checkbox']:checked) {
+	background-color: #DDEEFF;
+	border-radius: .25rem;
+	border: 1px solid var(--bs-primary);
+	overflow: hidden;
 }
 .employee-schedule-card .employee-schedule-card-image {
 	/* background-color: #EEE; */
@@ -127,22 +138,24 @@ select.employee-schedule-sort-select selectedcontent span:nth-child(2) {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
-.employee-schedule-card .employee-schedule-card-body label {
+.employee-schedule-card .employee-schedule-card-body .employee-schedule-card-body-select-cont {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	gap: .25em;
 }
-.employee-schedule-card .employee-schedule-card-body label select {
-	border-color: #fff;
+.employee-schedule-card .employee-schedule-card-body .employee-schedule-card-body-select-cont select {
+	border-color: transparent;
+	background-color: transparent;
 }
-.employee-schedule-card .employee-schedule-card-body label select:hover {
+.employee-schedule-card .employee-schedule-card-body .employee-schedule-card-body-select-cont select:hover {
 	border: var(--bs-border-width) solid var(--bs-border-color);
+	background-color: #fff;
 }
-.employee-schedule-card .employee-schedule-card-body label.employee-schedule-card-body-label-unassigned,
-.employee-schedule-card .employee-schedule-card-body label.employee-schedule-card-body-label-unassigned select {
-	color: #CD3737;
+.employee-schedule-card .employee-schedule-card-body .employee-schedule-card-body-select-cont.employee-schedule-card-body-select-cont-unassigned,
+.employee-schedule-card .employee-schedule-card-body .employee-schedule-card-body-select-cont.employee-schedule-card-body-select-cont-unassigned select {
+	color: #CD3737 !important;
 }
 .employee-schedule-card .employee-schedule-card-image .employee-schedule-card-image-flip .employee-schedule-card-image-flip-inner .employee-schedule-card-image-front img {
 	/* border-radius: 50%;

@@ -21,3 +21,11 @@
 		}
 	}
 }
+
+.react-datepicker__input-container .react-datepicker__calendar-icon {
+	right: 0;
+	fill: #6c757d;
+}
+.react-datepicker__view-calendar-icon input {
+	padding: 6px 25px 5px 10px !important;
+}
