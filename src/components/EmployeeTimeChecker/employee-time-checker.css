@@ -1,0 +1,76 @@
+:root {
+	--employee-time-checker-success: #59CC8D;
+	--employee-time-checker-warning: #FFFF5A;
+	--employee-time-checker-danger: #FF5959;
+	--employee-time-checker-neutral: #727272;
+}
+table.employee-time-checker {
+	width: 100%;
+	table-spacing: 0;
+	border-collapse: collapse;
+}
+table.employee-time-checker thead tr th div {
+	text-align: center;
+}
+table.employee-time-checker thead tr th div:nth-child(1) {
+	font-size: 0.75rem;
+	color: #bbb;
+	font-weight: 400;
+}
+table.employee-time-checker tbody tr td {
+	text-align: center;
+	width: 8%;
+    height: 100%;
+    padding: .25rem;
+    height: 0;
+    vertical-align: top;
+}
+table.employee-time-checker tbody tr td:first-child {
+	text-align: left;
+	vertical-align: middle;
+	width: 20%;
+}
+table.employee-time-checker tbody tr td:last-child {
+	font-weight: 600;
+	vertical-align: middle;
+}
+table.employee-time-checker tbody tr td .employee-time-checker-table-snipple {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 0.25rem;
+	font-size: 0.75rem;
+	padding: .25rem;
+	gap: .25rem;
+}
+table.employee-time-checker tbody tr td .employee-time-checker-table-snipple svg {
+	display: block;
+    width: 48px;
+}
+table.employee-time-checker tbody tr td .employee-time-checker-table-snipple.employee-time-checker-table-snipple-success {
+	background-color: var(--employee-time-checker-success);
+	color: #fff;
+}
+table.employee-time-checker tbody tr td .employee-time-checker-table-snipple.employee-time-checker-table-snipple-warning {
+	background-color: var(--employee-time-checker-warning);
+	color: #000;
+}
+table.employee-time-checker tbody tr td .employee-time-checker-table-snipple.employee-time-checker-table-snipple-danger {
+	background-color: var(--employee-time-checker-danger);
+	color: #fff;
+}
+table.employee-time-checker tbody tr td .employee-time-checker-table-snipple.employee-time-checker-table-snipple-free {
+	border-color: #0D0D0D;
+    background-image: repeating-linear-gradient(-45deg, #0D0D0D, #0D0D0D 2px, #404040 2px, #404040 4px);
+	color: #fff;
+}
+table.employee-time-checker tbody tr td .employee-time-checker-table-snipple.employee-time-checker-table-snipple-suspension,
+table.employee-time-checker tbody tr td .employee-time-checker-table-snipple.employee-time-checker-table-snipple-sick,
+table.employee-time-checker tbody tr td .employee-time-checker-table-snipple.employee-time-checker-table-snipple-permission,
+table.employee-time-checker tbody tr td .employee-time-checker-table-snipple.employee-time-checker-table-snipple-vacation {
+	background-color: var(--employee-time-checker-neutral);
+	color: #fff;
+}

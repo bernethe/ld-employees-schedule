@@ -1,0 +1,152 @@
+[
+	{
+		"id": 4400,
+		"name": "ROXANA VINDAS CASTILLO",
+		"img": "https://randomuser.me/api/portraits/women/3.jpg",
+		"gender": 2,
+		"timer": [
+			{
+				"hours": "06:45 - 18:45",
+				"diff": 0,
+				"visual": "success",
+				"isChecked": 0
+			},
+			{
+				"hours": "06:45 - 18:45",
+				"diff": 8,
+				"visual": "danger",
+				"isChecked": 0
+			},
+			{
+				"hours": "06:45 - 18:45",
+				"diff": 0,
+				"visual": "success",
+				"isChecked": 0
+			},
+			{
+				"hours": "06:45 - 18:45",
+				"diff": 8,
+				"visual": "danger",
+				"isChecked": 1
+			},
+			{
+				"hours": "06:45 - 18:45",
+				"diff": 1,
+				"visual": "warning",
+				"isChecked": 0
+			},
+			{
+				"hours": "06:45 - 18:45",
+				"diff": 0,
+				"visual": "success",
+				"isChecked": 0
+			},
+			{
+				"hours": "",
+				"diff": 0,
+				"visual": "free",
+				"isChecked": 0
+			}
+		]
+	},
+	{
+		"id": 4416,
+		"name": "MIKE NICOLAS TORRES VARGAS",
+		"img": "https://randomuser.me/api/portraits/men/5.jpg",
+		"gender": 1,
+		"timer": [
+			{
+				"hours": "07:00 - 17:00",
+				"diff": 1,
+				"visual": "warning",
+				"isChecked": 1
+			},
+			{
+				"hours": "",
+				"diff": 0,
+				"visual": "suspension",
+				"isChecked": 0
+			},
+			{
+				"hours": "06:45 - 18:45",
+				"diff": 8,
+				"visual": "danger",
+				"isChecked": 0
+			},
+			{
+				"hours": "07:00 - 17:00",
+				"diff": 1,
+				"visual": "warning",
+				"isChecked": 1
+			},
+			{
+				"hours": "06:45 - 18:45",
+				"diff": 0,
+				"visual": "success",
+				"isChecked": 0
+			},
+			{
+				"hours": "",
+				"diff": 0,
+				"visual": "free",
+				"isChecked": 0
+			},
+			{
+				"hours": "",
+				"diff": 0,
+				"visual": "permission",
+				"isChecked": 0
+			}
+		]
+	},
+	{
+		"id": 2496,
+		"name": "JASON ARIEL SABORIO HERRERA",
+		"img": "https://randomuser.me/api/portraits/men/1.jpg",
+		"gender": 1,
+		"timer": [
+			{
+				"hours": "",
+				"diff": 0,
+				"visual": "sick",
+				"isChecked": 0
+			},
+			{
+				"hours": "06:45 - 18:45",
+				"diff": 0,
+				"visual": "success",
+				"isChecked": 0
+			},
+			{
+				"hours": "06:45 - 18:45",
+				"diff": 0,
+				"visual": "success",
+				"isChecked": 0
+			},
+			{
+				"hours": "",
+				"diff": 0,
+				"visual": "vacation",
+				"isChecked": 0
+			},
+			{
+				"hours": "",
+				"diff": 0,
+				"visual": "vacation",
+				"isChecked": 0
+			},
+			{
+				"hours": "06:45 - 18:45",
+				"diff": 8,
+				"visual": "danger",
+				"isChecked": 0
+			},
+			{
+				"hours": "",
+				"diff": 0,
+				"visual": "free",
+				"isChecked": 0
+			}
+		]
+	}
+]
