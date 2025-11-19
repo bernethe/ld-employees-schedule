@@ -249,3 +249,40 @@ table.employee-time-checker tbody tr td .employee-time-checker-table-snipple lab
 	animation: zzzAnim 2s infinite;
 	animation-delay: .5s;
 }
+
+@keyframes gavelAnim {
+	0% { transform: rotate(0deg); }
+	25% { transform: rotate(-15deg); }
+	50% { transform: rotate(15deg); }
+	75% { transform: rotate(0deg); }
+}
+.gavelSVG {
+	transform-origin: left bottom;
+	animation: gavelAnim 2s infinite;
+}
+
+@keyframes briefcaseAnim {
+	0% { transform: translateY(0); }
+	50% { transform: translateY(-10%); }
+	100% { transform: translateY(0); }
+}
+.briefcaseSVG {
+	transform-origin: left bottom;
+	animation: briefcaseAnim 2s infinite;
+}
+
+@keyframes thumbsUpAnim {
+	0% { transform: scale(1); }
+	50% { transform: scale(1.1); }
+	100% { transform: scale(1); }
+}
+.thumbsUpSVG {
+	transform-origin: left bottom;
+	animation: thumbsUpAnim 2s infinite;
+}
+/* @keyframes umbrellaAnim {
+}
+.umbrellaSVG {
+	transform-origin: left bottom;
+	animation: umbrellaAnim 2s infinite;
+} */

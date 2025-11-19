@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { FaThumbsUp, FaUmbrellaBeach, FaBriefcaseMedical, FaGavel } from 'react-icons/fa';
 import EmployeeTimeCheckerSnippet from './EmployeeTimeCheckerSnippet';
-import {ZZZIcon} from './EmployeeTimeCheckerIcons';
+import { BriefcaseMedicalIcon, GavelIcon, ThumbsUpIcon, UmbrellaBeachIcon,ZZZIcon } from './EmployeeTimeCheckerIcons';
 import './employee-time-checker.css';
 
 const EmployeeTimeChecker = ({weekStart, data}) => {
@@ -67,10 +67,10 @@ const EmployeeTimeChecker = ({weekStart, data}) => {
 										<p className='m-0'>-{ time.diff } hrs</p>
 									</> : <p className='m-0'>&nbsp;</p> }
 									{ time.visual === 'free' && <><ZZZIcon /><small>Día Libre</small></> }
-									{ time.visual === 'suspension' && <><FaGavel /><small>Suspención</small></> }
-									{ time.visual === 'sick' && <><FaBriefcaseMedical /><small>Enfermedad</small></> }
-									{ time.visual === 'permission' && <><FaThumbsUp /><small>Permiso</small></> }
-									{ time.visual === 'vacation' && <><FaUmbrellaBeach /><small>Vacaciones</small></> }
+									{ time.visual === 'suspension' && <><GavelIcon /><small>Suspención</small></> }
+									{ time.visual === 'sick' && <><BriefcaseMedicalIcon /><small>Enfermedad</small></> }
+									{ time.visual === 'permission' && <><ThumbsUpIcon /><small>Permiso</small></> }
+									{ time.visual === 'vacation' && <><UmbrellaBeachIcon /><small>Vacaciones</small></> }
 								</div>
 							</td>)
 						}
