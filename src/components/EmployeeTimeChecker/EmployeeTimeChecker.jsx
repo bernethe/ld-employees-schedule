@@ -65,7 +65,7 @@ const EmployeeTimeChecker = ({weekStart, data}) => {
 									{ time.visual === 'warning' || time.visual === 'danger' ? <>
 										<label className='employee-time-checker-table-snipple-checkbox'><input type="checkbox" checked={Boolean(time.isChecked)} onChange={ (e) => handleCheckbox(employee.id, timeIndex) }/></label>
 										<p className='m-0'>-{ time.diff } hrs</p>
-									</> : <p className='m-0'>&nbsp;</p> }
+									</> : '' }
 									{ time.visual === 'free' && <><ZZZIcon /><small>Día Libre</small></> }
 									{ time.visual === 'suspension' && <><GavelIcon /><small>Suspención</small></> }
 									{ time.visual === 'sick' && <><BriefcaseMedicalIcon /><small>Enfermedad</small></> }

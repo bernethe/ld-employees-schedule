@@ -280,9 +280,20 @@ table.employee-time-checker tbody tr td .employee-time-checker-table-snipple lab
 	transform-origin: left bottom;
 	animation: thumbsUpAnim 2s infinite;
 }
-/* @keyframes umbrellaAnim {
+@keyframes umbrellaSunAnim {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
 }
-.umbrellaSVG {
-	transform-origin: left bottom;
-	animation: umbrellaAnim 2s infinite;
-} */
+.umbrellaSVG-sun {
+	transform-origin: 16.729147141% 16.729147141%;
+	animation: umbrellaSunAnim 2s linear infinite;
+}
+@keyframes umbrellaAnim {
+	0% { transform: rotate(0deg); }
+	20% { transform: rotate(-10deg); }
+	40% { transform: rotate(0deg); }
+}
+.umbrellaSVG-umbrella {
+	transform-origin: 48.969072164% 91.37769447%;
+	animation: umbrellaAnim 5s infinite;
+}
