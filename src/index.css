@@ -29,3 +29,34 @@
 .react-datepicker__view-calendar-icon input {
 	padding: 6px 25px 5px 10px !important;
 }
+
+
+.employee-time-modal {
+	padding: .25rem 1rem;
+	border-radius: 8px;
+	text-align: right;
+}
+.employee-time-modal.employee-time-modal-success {
+	background-color: var(--employee-time-checker-success);
+	color: #fff;
+}
+.employee-time-modal.employee-time-modal-warning {
+	background-color: var(--employee-time-checker-warning);
+	color: #000;
+}
+.employee-time-modal.employee-time-modal-danger {
+	background-color: var(--employee-time-checker-danger);
+	color: #fff;
+}
+.employee-time-modal.employee-time-modal-free {
+	border-color: #0D0D0D;
+    background-image: repeating-linear-gradient(-45deg, #0D0D0D, #0D0D0D 2px, #404040 2px, #404040 4px);
+	color: #fff;
+}
+.employee-time-modal.employee-time-modal-suspension,
+.employee-time-modal.employee-time-modal-sick,
+.employee-time-modal.employee-time-modal-permission,
+.employee-time-modal.employee-time-modal-vacation {
+	background-color: var(--employee-time-checker-neutral);
+	color: #fff;
+}
