@@ -60,3 +60,52 @@
 	background-color: var(--employee-time-checker-neutral);
 	color: #fff;
 }
+img.employee-time-modal-img {
+	aspect-ratio: 1 / 1;
+	margin-right: 0.5rem;
+	object-fit: cover;
+	display: inline-block;
+	width: 1.75em;
+	border-radius: 50%;
+}
+.employee-time-modal-data {
+	position: relative;
+	text-align: left;
+	margin-block: 1rem;
+	border-radius: .5rem;
+	padding: .75rem .75rem .75rem 1rem;
+	overflow: hidden;
+}
+.employee-time-modal-data::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	width: .35rem;
+}
+.employee-time-modal-data.employee-time-modal-data-success {
+	background-color: color-mix(in srgb, var(--employee-time-checker-success), white 75%);
+}
+.employee-time-modal-data.employee-time-modal-data-warning {
+	background-color: color-mix(in srgb, var(--employee-time-checker-warning), white 75%);
+}
+.employee-time-modal-data.employee-time-modal-data-danger {
+	background-color: color-mix(in srgb, var(--employee-time-checker-danger), white 75%);
+}
+.employee-time-modal-data.employee-time-modal-data-free {
+	background-color: color-mix(in srgb, #0D0D0D, white, white 75%);
+}
+.employee-time-modal-data.employee-time-modal-data-success::before {
+	background-color: var(--employee-time-checker-success);
+}
+.employee-time-modal-data.employee-time-modal-data-warning::before {
+	background-color: var(--employee-time-checker-warning);
+}
+.employee-time-modal-data.employee-time-modal-data-danger::before {
+	background-color: var(--employee-time-checker-danger);
+}
+.employee-time-modal-data.employee-time-modal-data-free::before {
+	background-color: #0D0D0D;
+}

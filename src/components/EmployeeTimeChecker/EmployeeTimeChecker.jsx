@@ -78,7 +78,7 @@ const EmployeeTimeChecker = ({weekStart, data}) => {
 
 	const handleClick = (time, employee, timeIndex) => {
 		if (time.visual === 'warning' || time.visual === 'danger') {
-			console.log({...time, ...employee, timeIndex});
+			// console.log({...time, ...employee, timeIndex});
 			setShowModal({...time, ...employee, timeIndex });
 		}
 	}
@@ -128,17 +128,32 @@ const EmployeeTimeChecker = ({weekStart, data}) => {
 			</tbody>
 		</table>
 		{showModal && <Modal onClose={() => setShowModal(null)} closeWithBackdrop={true}>
-			<div className='row'>
+			<div className='row border-bottom mb-3'>
 				<div className='col-sm-12'>
-					<h4>Justificación de Horario</h4>
+					<h5>Justificación de Horario</h5>
 				</div>
 			</div>
-			<div className='row'>
+			{/* <div className='row'>
 				<div className='col-sm-6 col-md-8'>
 					<EmployeeTimeCheckerSnippet employee={showModal} />
 				</div>
 				<div className='col-sm-6 col-md-4'>
 					<div className={`employee-time-modal employee-time-modal-${showModal.visual}`}>
+						<strong className='small'>Día:</strong> {weekDaysShort[showModal.timeIndex]} {dates[showModal.timeIndex]?.getDate()} de {monthsShort[dates[showModal.timeIndex]?.getMonth()]}, {dates[showModal.timeIndex]?.getFullYear()}<br />
+						<strong className='small'>Horario:</strong> {showModal.hours}<br />
+						<strong className='small'>Horas no laboradas:</strong> {showModal.diff} hrs
+					</div>
+				</div>
+			</div> */}
+			<div className='row'>
+				<div className='col-sm-12'>
+					<img src={showModal.img} alt={showModal.name} className='employee-time-modal-img' />
+					<span>{showModal.name}</span>
+				</div>
+			</div>
+			<div className='row'>
+				<div className='col-12'>
+					<div className={`employee-time-modal-data employee-time-modal-data-${showModal.visual}`}>
 						<strong className='small'>Día:</strong> {weekDaysShort[showModal.timeIndex]} {dates[showModal.timeIndex]?.getDate()} de {monthsShort[dates[showModal.timeIndex]?.getMonth()]}, {dates[showModal.timeIndex]?.getFullYear()}<br />
 						<strong className='small'>Horario:</strong> {showModal.hours}<br />
 						<strong className='small'>Horas no laboradas:</strong> {showModal.diff} hrs
@@ -153,20 +168,20 @@ const EmployeeTimeChecker = ({weekStart, data}) => {
 			</div>
 			{
 				modalSelectedValue?.value === 5 && <div className='row my-2'>
-					<div className='col-sm-4'>
+					{/* <div className='col-sm-4'>
 						<label className='text-muted'><small>Minutos de tardía/anticipo</small></label>
 						<input type='number' className='form-control' value={showModal.diff*60} disabled />
 					</div>
 					<div className='col-sm-4'>
 						<label className='text-muted'><small>Horas correspondientes a rebajo</small></label>
 						<input type='number' className='form-control' value={showModal.diff} disabled />
-					</div>
+					</div> */}
 					<div className='col-sm-4'>
 						<label className='text-muted'><small>Horas a rebajar</small></label>
 						<input type='number' className='form-control' value={showModal.diff} />
 					</div>
 					{
-						showModal.diff === 8 && <div className='col-12 text-center mb-2'>
+						showModal.diff === 8 && <div className='col-12 mb-2'>
 							<small className='text-muted'>Al no tener marcas registradas en este día, corresponde al rebajo de 8.00 hora(s) al colaborador</small>
 						</div>
 					}
@@ -179,13 +194,11 @@ const EmployeeTimeChecker = ({weekStart, data}) => {
 				</div>
 			</div>
 			<div className='row mt-2'>
-				<div className='col-sm-6'>
-					<label className='text-muted'>
-						<input type='checkbox' disabled /> Justificar toda la semana
+				<div className='col-12 text-end'>
+					<label className='text-muted me-2'>
+						<input type='checkbox' className='form-check-input me-1' disabled /> Justificar toda la semana
 					</label>
-				</div>
-				<div className='col-sm-6 text-end'>
-					<button className='btn btn-secondary me-2' onClick={() => setShowModal(null)}>Cerrar</button>
+					<button className='btn btn-outline-secondary me-2' onClick={() => setShowModal(null)}>Cerrar</button>
 					<button className='btn btn-primary'>Guardar</button>
 				</div>
 			</div>
